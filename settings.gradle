@@ -1,0 +1,2 @@
+rootProject.name = "RelightMyFire"
+include ':app'

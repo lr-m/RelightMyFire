@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#111111"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FF8C00"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvDeviceInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnExploit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_exploit"
+        android:textColor="#111111"
+        android:backgroundTint="#FF8C00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Terminal box wrapper (FrameLayout allows footer overlay) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/terminalBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#1a1a1a"
+            android:padding="1dp">
+
+            <ScrollView
+                android:id="@+id/scrollOutput"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:fadingEdgeLength="0dp">
+
+                <TextView
+                    android:id="@+id/tvOutput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF8C00"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:text="Ready.\n" />
+            </ScrollView>
+
+            <!-- Input row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/tvPrompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ "
+                    android:textColor="#FF8C00"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="4dp" />
+
+                <EditText
+                    android:id="@+id/etInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#FF8C00"
+                    android:textColorHint="#7a4400"
+                    android:hint="type command..."
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:background="@null"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:enabled="false" />
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↵"
+                    android:textColor="#FF8C00"
+                    android:backgroundTint="#2a2a2a"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:enabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Footer watermark: ~40% terminal width, 25% opacity, bottom-right -->
+        <ImageView
+            android:id="@+id/ivFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/footer"
+            android:alpha="0.25"
+            android:adjustViewBounds="true"
+            android:scaleType="fitEnd"
+            android:layout_margin="4dp"
+            android:importantForAccessibility="no" />
+
+    </FrameLayout>
+
+</LinearLayout>
