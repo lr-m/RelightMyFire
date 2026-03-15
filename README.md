@@ -22,3 +22,11 @@ Take a look at [my RIPMaliUtgard repo](https://github.com/lr-m/RIPMaliUtgard) fo
 ## Example Run
 
 <img src="images/demo.gif" width="720">
+
+## Building
+
+- Open this directory in Android Studio
+
+- Will need an older SDK installed because these things are relics (API level 22 works), you can do this with the SDK manager
+
+- Build the application with the hammer button
